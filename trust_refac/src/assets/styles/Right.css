@@ -1,0 +1,39 @@
+.right-menu {
+    background-color: antiquewhite;
+    width: 100px;
+    height: 400px;
+    margin-top: 10px;
+    margin-left: 5px;
+    position: fixed;
+    right: 10%;
+}
+
+.lately-b {
+    display: flex;
+    justify-content: center;
+}
+
+.lately-list {
+    background-color: aliceblue;
+    padding: 10px;
+    margin: 5px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 100%;
+    font-weight: 600;
+    font-size: 13px;
+    color: rgb(102, 102, 102)
+}
+
+.h {
+    height: 2000px;
+}

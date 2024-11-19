@@ -1,0 +1,40 @@
+.mainpage {
+    width: 60%;
+    height: 100%;
+    margin: auto;
+}
+
+.mainpage > .maxView {
+    border: solid 1px black;
+}
+
+.mainpage > .maxView > .maxViewTitle {
+    margin: 5px;
+    font-size: large;
+    font-weight: 900;
+}
+
+.mainpage > .maxView > .productCardList {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.lately {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.mainpage > .lately > .productCardList {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mainpage > .lately > .latelyTitle {
+    margin: 5px;
+    font-size: large;
+    font-weight: 900;
+}

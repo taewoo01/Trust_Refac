@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+
+/* App.css */
+
+/* 전체 레이아웃 */
+.app-layout {
+  display: flex;
+  flex-direction: row; /* 수평 정렬 */
+  height: 100vh; /* 화면 높이 채우기 */
+  box-sizing: border-box;
+}
+
+/* 메인 콘텐츠 (Main) */
+.main-content {
+  flex: 1; /* 나머지 공간을 채우기 */
+  overflow-y: auto; /* 스크롤 가능 */
+  padding: 20px;
+  background-color: #f9f9f9; /* 배경색 설정 */
+}
+
+/* 오른쪽 컴포넌트 (Right) */
+.right {
+  flex: 0 0 300px; /* 고정 너비 설정 */
+  background-color: #ffffff; /* 배경색 설정 */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+  height: 100%; /* 화면 높이 맞추기 */
+  overflow-y: auto; /* 내용이 많으면 스크롤 */
+}
+

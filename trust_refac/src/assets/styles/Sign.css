@@ -1,0 +1,21 @@
+/* 컨테이너 스타일 */
+.sign-container {
+    padding-bottom: 2.5rem; /* pb-10 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1024px; /* max-w-screen-lg */
+    margin: 0 auto; /* mx-auto */
+  }
+  
+  /* 제목 스타일 */
+  .sign-title {
+    font-size: 2.25rem; /* text-4xl */
+    font-weight: bold; /* font-bold */
+    padding: 0.5rem 0; /* py-2 */
+    margin: 2rem; /* m-8 */
+    text-align: center; /* text-center */
+    width: 100%;
+  }
+  
