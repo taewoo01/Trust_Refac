@@ -22,8 +22,8 @@
 /* 닫기 버튼 스타일 */
 .modal-close-button {
     position: absolute;
-    top: 0.75rem;
-    left: 15rem;
+    top: 0.5rem;
+    left: 16rem;
     font-size: 2rem;
     color: rgba(0, 0, 0, 0.5);
     cursor: pointer;

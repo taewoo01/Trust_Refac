@@ -5,7 +5,7 @@ import {
   faMap,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
-import "../../../assets/styles/signup.css"
+import "./signup.css"
 
 const Signup = ({ toggleForm }) => {
   return (
@@ -13,14 +13,14 @@ const Signup = ({ toggleForm }) => {
       <form className="signup-form">
         {/* 지역 입력 */}
         <div className="signup-input-wrapper">
-          <label htmlFor="user_email" className="sr-only">
+          <label htmlFor="user_mail" className="sr-only">
             지역
           </label>
           <FontAwesomeIcon icon={faMap} className="signup-icon" />
           <input
-            id="user_email"
-            type="email"
-            placeholder="이메일을 입력하세요"
+            id="user_map"
+            type="map"
+            placeholder="지역을 입력하세요"
             className="signup-input"
             required
           />

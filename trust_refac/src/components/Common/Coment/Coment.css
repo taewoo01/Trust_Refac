@@ -1,0 +1,52 @@
+/* 댓글 스타일 시트 */
+.coment-list {
+    margin-top: 100px;
+    border: solid 2px;
+    width: 100%;
+    height: 500px;
+    overflow-y: auto; /* 스크롤 가능 */
+}
+
+.coment {
+    margin: 20px;
+    padding: 10px; /* 여백 추가 */
+    background-color: aliceblue;
+    border-radius: 8px; /* 둥근 모서리 */
+    border: 1px solid #ccc; /* 테두리 추가 */
+}
+
+/* 답글 리스트 */
+.reply-list {
+    margin-left: 20px; /* 들여쓰기 */
+    padding: 10px 0; /* 위아래 여백 */
+    border-left: 2px solid #ddd; /* 왼쪽 구분선 */
+}
+
+/* 개별 답글 */
+.reply {
+    margin-bottom: 10px; /* 답글 간 간격 */
+    padding: 10px;
+    background-color: #f9f9f9; /* 연한 배경 */
+    border-radius: 8px; /* 둥근 모서리 */
+    border: 1px solid #eee; /* 연한 테두리 */
+}
+
+/* 답글 입력 필드 */
+.reply-input {
+    margin-top: 10px;
+    gap: 10px; /* 요소 간 간격 */
+}
+
+/* 댓글 작성 필드 */
+.footer {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    gap: 10px; /* 입력 필드와 버튼 간격 */
+}
+
+/* 댓글 개수 */
+.comment-count {
+    margin-left: 20px;
+    font-weight: bold; /* 강조 */
+}

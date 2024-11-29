@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react";
-import Signin from "../Signin/signin";
-import Signup from "../SignUp/signup";
-import "../../../assets/styles/Sign.css"
+import Signin from "../Signin/Signin";
+import Signup from "../SignUp/Signup";
+import "./Sign.css"
 
 const Sign = () => {
   const [isLoginForm, setIsLoginForm] = useState(true);

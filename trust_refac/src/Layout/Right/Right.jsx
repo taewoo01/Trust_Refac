@@ -1,4 +1,4 @@
-import "../../assets/styles/Right.css"
+import "./Right.css"
 
 const Right = () => {
     return (

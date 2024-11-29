@@ -1,0 +1,47 @@
+#upload-container{
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-page-title {
+    width: 500px;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.upload-label {
+    width: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.upload-option {
+    margin-top: 30px;
+}
+
+.upload-name {
+    width: 400px;
+}
+
+#product-description{
+    height: 120px;
+}
+
+#submit-button {
+    float: right;
+    background-color: antiquewhite;
+    color: black;
+    border: none;
+    margin-top: 20px;
+}
+
+.upload-list-inline {
+    width: 200px;
+    margin-inline-end: 8px;
+    float: left;
+}

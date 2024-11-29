@@ -1,14 +1,17 @@
-import "../../assets/styles/productcard.css"
+import "./Productcard.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 
 const ProductCard = ({item}) => {
+
+    const imgsrc = require(`../../../assets/images/${item.imgsrc}`);
+
     return (
         <> 
             <div className="productCard">
                 <div className="productImg">
-                    <img className="product-img" src={item.imgSrc} alt={item.title} />
+                    <img className="product-img" src={imgsrc} alt={item.title} />
                 </div>
                 <div className="productTitle">
                     {item.product_title}
@@ -28,8 +31,8 @@ const ProductCard = ({item}) => {
                         <div className="productDay">
                             {item.product_day}
                         </div>
-                        <div className="name">
-                            {item.name}
+                        <div className="seller">
+                            {item.seller}
                         </div>
                     </div>
                 </div>

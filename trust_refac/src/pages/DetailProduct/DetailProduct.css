@@ -1,0 +1,32 @@
+.detailProductPage {
+    width: 70%;
+    margin: auto;
+    overflow: visible;
+    height: auto;
+}
+
+.detailproduct {
+    width: 100%;
+    height: 300px;
+}
+
+.comentpage {
+    width: 100%;
+    margin: auto;
+}
+
+/* 다른 상품 스타일 시트 */
+.def-product-list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.def-product-img {
+    width: 200px;
+    height: 200px;
+}
+
+.def-product-content {
+    text-align: center;
+}

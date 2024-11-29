@@ -1,0 +1,109 @@
+/* 정보수정 타이틀 */
+.infoupdateTitle {
+    text-align: center;
+    font-size: x-large;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+/* 정보수정 메인 스타일 */
+.infoupdatePage {
+    width: 70%;
+    margin: auto;
+    display: flex;
+}
+
+.infoupdatePage > .infoupdate {
+    width: 50%;
+    height: 500px;
+    margin: 5px;
+    background-color: blueviolet;
+    border: 1px solid #cfe2ff; /* border-blue-200 */
+    border-radius: 8px;
+    padding: 40px; /* p-10 */
+    background-color: #fff;
+}
+
+.infoupdatePage > .Line {
+    height: 600px;
+    margin: 5px;
+    border-right: solid 2px black;
+}
+
+.infoupdatePage > .kakaoMap {
+    width: 50%;
+    height: 500px;
+    margin: 5px;
+    padding: 40px; /* p-10 */
+}
+
+/* 개인 정보 수정 입력 칸 */
+/* 폼 스타일 */
+.info-form {
+    display: flex;
+    flex-direction: column;
+    gap: 50px; /* space-y-4 */
+}
+
+/* 입력 필드 컨테이너 */
+.info-input-wrapper {
+    position: relative;
+}
+
+/* 아이콘 스타일 */
+.info-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6b7280; /* text-gray-400 */
+}
+
+/* 입력 필드 스타일 */
+.info-input {
+    position: relative;
+    left: 2rem;
+    padding: 8px;
+    width: 90%;
+    border: 1px solid #cfe2ff;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.info-input:focus {
+    border-color: #3b82f6; /* focus:border-blue-300 */
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2); /* focus:ring-blue-300 */
+}
+
+/* 버튼 스타일 */
+.info-button {
+    padding: 8px 16px; /* py-2, px-4 */
+    background-color: #3b82f6; /* bg-blue-500 */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.info-button:hover {
+    background-color: #2563eb; /* hover:bg-blue-600 */
+}
+
+
+/* 프로필 이미지 */
+.user-images {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user-images > img {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    border-radius: 50%;
+}

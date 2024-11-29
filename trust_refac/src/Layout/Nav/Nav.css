@@ -1,0 +1,151 @@
+/* navigation css */
+.navigation {
+    width: 80%;
+    margin: auto;
+}
+
+.sign-menu {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin: 10px;
+}
+
+.sign-menu > .signin {
+    width: 100px;
+    background-color: white;
+    padding: 10px 20px; /* 버튼의 기본 여백 */
+    border: none; /* 버튼 테두리 제거 */
+    border-radius: 5px; /* 둥근 모서리 */
+    cursor: pointer; /* 커서 변경 */
+    font-size: 16px; /* 텍스트 크기 */
+    transition: background-color 0.3s ease; /* 배경색 변경 애니메이션 */
+}
+
+
+/* top-bar css */
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    border-bottom: solid 2px black;
+}
+
+.top-bar > .site-title {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+
+.top-bar > .site-title > .title {
+    margin: 5px;
+    font-size: xx-large;
+    font-weight: 900;
+}
+
+.top-bar > .site-title > img {
+    width: 50px;
+    height: 50px;
+    mix-blend-mode: multiply;
+}
+
+.top-bar > .category {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.top-bar > .search > .search-input {
+    width: 300px;
+}
+
+
+/*my-info드랍 css*/
+.my_info_wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.my_info_page:hover {
+    font-weight: 900;
+    background: #f0f0f0;
+}
+  
+.my_info_page {
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+    border: none; /* 버튼 테두리 제거 */
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    min-width: 150px;
+    overflow: hidden;
+  }
+  
+  .dropdown-item {
+    font-size: 14px; /* 글자 크기 통일 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    display: flex; /* Flexbox로 중앙 배치 */
+    align-items: center; /* 수직 중앙 정렬 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    height: 40px; /* 항목의 고정 높이 설정 */
+    cursor: pointer;
+    border-bottom: 1px solid #f5f5f5; /* 하단 테두리 */
+    box-sizing: border-box; /* 패딩 포함 */
+  }
+  
+  .dropdown-item:last-child {
+    border-bottom: none;
+  }
+  
+  .dropdown-item:hover {
+    background: #f0f0f0;
+  }
+
+/* category 드랍 */
+.category_wrapper {
+    position: relative;
+    display: inline-block;
+}
+  
+.top-bar > .category > .category_wrapper > .clothes, 
+.top-bar > .category > .category_wrapper > .essentials, 
+.top-bar > .category > .category_wrapper > .accessories, 
+.top-bar > .category > .category_wrapper > .electronics {
+    cursor: pointer;
+    padding: 10px 15px; /* 버튼 간 패딩 */
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+    border: none; /* 테두리 제거 */
+    margin: 0 10px; /* 버튼 사이 간격 조정 */
+}
+
+.top-bar > .category > .category_wrapper > .clothes:hover, 
+.top-bar > .category > .category_wrapper > .essentials:hover, 
+.top-bar > .category > .category_wrapper > .accessories:hover, 
+.top-bar > .category > .category_wrapper > .electronics:hover {
+    font-weight: 900;
+    background: #f0f0f0;
+}
