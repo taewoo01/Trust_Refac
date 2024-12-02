@@ -1,4 +1,8 @@
 /* App.css */
+a {
+  color: black; /* 검은색으로 텍스트 색 변경 */
+  text-decoration: none; /* 밑줄 없애기 */
+}
 
 /* 전체 레이아웃 */
 .app-layout {
