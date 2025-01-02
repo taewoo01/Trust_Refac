@@ -6,11 +6,10 @@ import { Link } from "react-router-dom";
 import logopng from "../../assets/images/logo.png";
 const { Search } = Input;
 
-
 const Nav = ({ openLoginModal }) => {
   const [dropdownStates, setDropdownStates] = useState({
     myInfo: false,
-    clothes: false,
+    fashion: false, // 변경된 키
     essentials: false,
     accessories: false,
     electronics: false,
@@ -29,7 +28,7 @@ const Nav = ({ openLoginModal }) => {
   const closeAllDropdowns = () => {
     setDropdownStates({
       myInfo: false,
-      clothes: false,
+      fashion: false, // 변경된 키
       essentials: false,
       accessories: false,
       electronics: false,
@@ -74,10 +73,14 @@ const Nav = ({ openLoginModal }) => {
             {dropdownStates.myInfo && (
               <div className="dropdown-menu">
                 <Link to="/infoupdate">
-                  <div className="dropdown-item" onClick={closeAllDropdowns}>정보 수정</div>
+                  <div className="dropdown-item" onClick={closeAllDropdowns}>
+                    정보 수정
+                  </div>
                 </Link>
                 <PwUpdateModal onClick={closeAllDropdowns} />
-                <div className="dropdown-item">내 상점</div>
+                <Link to="mypage">
+                  <div className="dropdown-item">내 상점</div>
+                </Link>
               </div>
             )}
           </div>
@@ -93,12 +96,12 @@ const Nav = ({ openLoginModal }) => {
           <div className="category">
             <div className="category_wrapper">
               <div
-                className="clothes"
-                onClick={() => toggleDropdown("clothes")}
+                className="fashion" // 변경된 클래스 이름
+                onClick={() => toggleDropdown("fashion")}
               >
-                옷
+                패션
               </div>
-              {dropdownStates.clothes && (
+              {dropdownStates.fashion && (
                 <div className="dropdown-menu">
                   <div className="dropdown-item">아우터</div>
                   <div className="dropdown-item">상의</div>

@@ -1,0 +1,56 @@
+/* 전체 페이지 스타일 */
+.my-shop-page {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  border: solid 1px black;
+}
+
+/* 상단 헤더 스타일 */
+.my-shop-header h1 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* 메뉴 컨테이너 스타일 */
+.menu-container {
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+/* 각 메뉴 버튼 스타일 */
+.menu-item {
+  flex: 1;
+  text-align: center;
+  padding: 10px 0;
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+/* 메뉴 버튼 활성화 상태 */
+.menu-item.active {
+  color: #007bff;
+  font-weight: bold;
+  border-bottom: 2px solid #007bff;
+}
+
+/* 메뉴 버튼 호버 효과 */
+.menu-item:hover {
+  color: #007bff;
+  background-color: #f9f9f9;
+}
+
+.my-shop-page > .product-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}

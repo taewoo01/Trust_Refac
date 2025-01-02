@@ -1,151 +1,160 @@
-/* navigation css */
+/* Navigation 스타일 */
 .navigation {
-    width: 80%;
-    margin: auto;
+  width: 80%;
+  margin: auto;
 }
 
+/* 로그인 메뉴 스타일 */
 .sign-menu {
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    margin: 10px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: 10px;
 }
 
+/* 로그인 버튼 스타일 */
 .sign-menu > .signin {
-    width: 100px;
-    background-color: white;
-    padding: 10px 20px; /* 버튼의 기본 여백 */
-    border: none; /* 버튼 테두리 제거 */
-    border-radius: 5px; /* 둥근 모서리 */
-    cursor: pointer; /* 커서 변경 */
-    font-size: 16px; /* 텍스트 크기 */
-    transition: background-color 0.3s ease; /* 배경색 변경 애니메이션 */
+  width: 100px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  background-color: white;
 }
 
-
-/* top-bar css */
-a {
-    text-decoration: none;
-    color: black;
+.sign-menu > .signin:hover {
+  font-weight: 900;
+  background: #f0f0f0;
 }
 
+/* Top Bar 스타일 */
 .top-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 10px;
-    border-bottom: solid 2px black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+  border-bottom: solid 2px black;
 }
 
+/* 사이트 제목 스타일 */
 .top-bar > .site-title {
-    display: flex;
-    align-items: center;
-    margin: 5px;
+  display: flex;
+  align-items: center;
+  margin: 5px;
 }
 
+/* 사이트 제목 텍스트 스타일 */
 .top-bar > .site-title > .title {
-    margin: 5px;
-    font-size: xx-large;
-    font-weight: 900;
+  margin: 5px;
+  font-size: xx-large;
+  font-weight: 900;
 }
 
+/* 사이트 로고 이미지 스타일 */
 .top-bar > .site-title > img {
-    width: 50px;
-    height: 50px;
-    mix-blend-mode: multiply;
+  width: 50px;
+  height: 50px;
+  mix-blend-mode: multiply;
 }
 
+/* 카테고리 스타일 */
 .top-bar > .category {
-    width: 50%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-
+/* 검색 입력창 스타일 */
 .top-bar > .search > .search-input {
-    width: 300px;
+  width: 300px;
 }
 
-
-/*my-info드랍 css*/
+/* 내 정보 드롭다운 스타일 */
 .my_info_wrapper {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
+/* 내 정보 페이지 항목 스타일 */
 .my_info_page:hover {
-    font-weight: 900;
-    background: #f0f0f0;
+  font-weight: 900;
+  background: #f0f0f0;
 }
-  
+
 .my_info_page {
-    cursor: pointer;
-    padding: 5px 10px;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    text-align: center;
-    border: none; /* 버튼 테두리 제거 */
-  }
-  
-  .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    min-width: 150px;
-    overflow: hidden;
-  }
-  
-  .dropdown-item {
-    font-size: 14px; /* 글자 크기 통일 */
-    text-align: center; /* 텍스트 중앙 정렬 */
-    display: flex; /* Flexbox로 중앙 배치 */
-    align-items: center; /* 수직 중앙 정렬 */
-    justify-content: center; /* 수평 중앙 정렬 */
-    height: 40px; /* 항목의 고정 높이 설정 */
-    cursor: pointer;
-    border-bottom: 1px solid #f5f5f5; /* 하단 테두리 */
-    box-sizing: border-box; /* 패딩 포함 */
-  }
-  
-  .dropdown-item:last-child {
-    border-bottom: none;
-  }
-  
-  .dropdown-item:hover {
-    background: #f0f0f0;
-  }
+  cursor: pointer;
+  padding: 5px 10px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+  border: none;
+}
 
-/* category 드랍 */
+/* 드롭다운 메뉴 스타일 */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  min-width: 150px;
+  overflow: hidden;
+}
+
+/* 드롭다운 아이템 스타일 */
+.dropdown-item {
+  font-size: 14px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  cursor: pointer;
+  border-bottom: 1px solid #f5f5f5;
+  box-sizing: border-box;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover {
+  background: #f0f0f0;
+}
+
+/* 카테고리 드롭다운 스타일 */
 .category_wrapper {
-    position: relative;
-    display: inline-block;
-}
-  
-.top-bar > .category > .category_wrapper > .clothes, 
-.top-bar > .category > .category_wrapper > .essentials, 
-.top-bar > .category > .category_wrapper > .accessories, 
-.top-bar > .category > .category_wrapper > .electronics {
-    cursor: pointer;
-    padding: 10px 15px; /* 버튼 간 패딩 */
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    text-align: center;
-    border: none; /* 테두리 제거 */
-    margin: 0 10px; /* 버튼 사이 간격 조정 */
+  position: relative;
+  display: inline-block;
 }
 
-.top-bar > .category > .category_wrapper > .clothes:hover, 
-.top-bar > .category > .category_wrapper > .essentials:hover, 
-.top-bar > .category > .category_wrapper > .accessories:hover, 
+/* 카테고리 버튼 스타일 */
+.top-bar > .category > .category_wrapper > .fashion,
+.top-bar > .category > .category_wrapper > .essentials,
+.top-bar > .category > .category_wrapper > .accessories,
+.top-bar > .category > .category_wrapper > .electronics {
+  cursor: pointer;
+  padding: 10px 15px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+  border: none;
+  margin: 0 10px;
+}
+
+/* 카테고리 버튼 hover 스타일 */
+.top-bar > .category > .category_wrapper > .fashion:hover,
+.top-bar > .category > .category_wrapper > .essentials:hover,
+.top-bar > .category > .category_wrapper > .accessories:hover,
 .top-bar > .category > .category_wrapper > .electronics:hover {
-    font-weight: 900;
-    background: #f0f0f0;
+  font-weight: 900;
+  background: #f0f0f0;
 }

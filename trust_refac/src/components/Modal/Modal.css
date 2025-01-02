@@ -1,36 +1,36 @@
 /* Backdrop 스타일 */
 .modal-backdrop {
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.75);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* 모달 박스 스타일 */
 .modal-container {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 500px;
-    position: relative;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 500px;
+  position: relative;
 }
 
 /* 닫기 버튼 스타일 */
 .modal-close-button {
-    position: absolute;
-    top: 0.5rem;
-    left: 16rem;
-    font-size: 2rem;
-    color: rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    background: none;
-    border: none;
+  position: absolute;
+  top: 0rem;
+  right: 1px;
+  font-size: 2rem;
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  background: none;
+  border: none;
 }
 
 .modal-close-button:hover {
-    color: rgba(0, 0, 0, 0.7);
+  color: rgba(0, 0, 0, 0.7);
 }

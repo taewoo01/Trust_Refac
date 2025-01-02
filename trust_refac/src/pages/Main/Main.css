@@ -1,40 +1,65 @@
 .mainpage {
-    width: 60%;
-    height: 100%;
-    margin: auto;
+  width: 60%;
+  margin: auto;
+  overflow: hidden;
 }
 
 .mainpage > .maxView {
-    border: solid 1px black;
+  border: solid 1px black;
+  border-radius: 10px;
 }
 
 .mainpage > .maxView > .maxViewTitle {
-    margin: 5px;
-    font-size: large;
-    font-weight: 900;
+  margin: 5px;
+  font-size: large;
+  font-weight: 900;
 }
 
 .mainpage > .maxView > .productCardList {
-    width: 90%;
-    display: flex;
-    justify-content: space-around;
-    margin: auto;
-}
-
-.lately {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
 }
 
 .mainpage > .lately > .productCardList {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .mainpage > .lately > .latelyTitle {
-    margin: 5px;
-    font-size: large;
-    font-weight: 900;
+  margin: 5px;
+  font-size: large;
+  font-weight: 900;
+}
+
+/* 페이지 스타일 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0 10px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #45a049;
+}
+
+.pagination span {
+  font-size: 16px;
+  font-weight: 600;
 }

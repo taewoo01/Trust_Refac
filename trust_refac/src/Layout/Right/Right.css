@@ -1,39 +1,91 @@
+/* Right 메뉴 전체 스타일 */
 .right-menu {
-    background-color: antiquewhite;
-    width: 100px;
-    height: 400px;
-    margin-top: 10px;
-    margin-left: 5px;
-    position: fixed;
-    right: 10%;
+  background-color: #f9f9f9; /* 부드러운 배경색 */
+  width: 100px;
+  height: 400px; /* 3개 아이템이 충분히 보이도록 */
+  margin-top: 20px;
+  position: fixed;
+  right: 10%;
+  border-radius: 12px; /* 둥근 모서리 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 미세한 그림자 */
+  overflow: hidden;
+  padding: 15px; /* 내부 여백 추가 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 상하로 공간을 분배 */
 }
 
+/* '최근 본 상품' 제목 스타일 */
 .lately-b {
-    display: flex;
-    justify-content: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin-bottom: 15px;
+  font-family: "Arial", sans-serif;
 }
 
+/* 최근 본 상품 리스트 스타일 */
 .lately-list {
-    background-color: aliceblue;
-    padding: 10px;
-    margin: 5px;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background-color: #fff; /* 흰색 배경 */
+  padding: 10px;
+  border-radius: 8px; /* 둥근 모서리 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 230px; /* 최대 높이 제한 */
+  flex-grow: 1; /* 리스트가 가능한 공간을 채우도록 */
 }
 
-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    width: 100%;
-    font-weight: 600;
-    font-size: 13px;
-    color: rgb(102, 102, 102)
+/* 개별 최근 본 상품 카드 스타일 */
+.lately-item {
+  width: 100%;
+  margin-bottom: 12px;
+  font-size: 14px;
 }
 
-.h {
-    height: 2000px;
+/* '최근 본 상품이 없습니다' 메시지 스타일 */
+.empty-message {
+  font-size: 14px;
+  color: #777;
+  text-align: center;
+}
+
+/* TOP 버튼 스타일 */
+.button {
+  background-color: #4caf50; /* 푸른색 */
+  color: white;
+  border: none;
+  border-radius: 25px; /* 둥근 버튼 */
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 85%;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  bottom: 15px; /* 버튼을 맨 아래에 위치시키기 위한 설정 */
+}
+
+/* 버튼 호버 시 스타일 */
+button:hover {
+  background-color: #45a049; /* 호버 시 색상 변화 */
+}
+
+/* 개별 아이템에 마우스 호버 시 효과 */
+.lately-card:hover {
+  transform: translateY(-5px); /* 아이템 올라가는 효과 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+  background-color: #f1f1f1; /* 호버 시 배경색 변경 */
+  border-color: #ddd; /* 테두리 색상 변경 */
+}
+
+/* 카드 제목 스타일 */
+.lately-card-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+  overflow: hidden;
+  white-space: nowrap;
 }

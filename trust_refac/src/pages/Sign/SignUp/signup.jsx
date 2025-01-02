@@ -5,7 +5,7 @@ import {
   faMap,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
-import "./signup.css"
+import "./Signup.css";
 
 const Signup = ({ toggleForm }) => {
   return (
@@ -13,7 +13,7 @@ const Signup = ({ toggleForm }) => {
       <form className="signup-form">
         {/* 지역 입력 */}
         <div className="signup-input-wrapper">
-          <label htmlFor="user_mail" className="sr-only">
+          <label htmlFor="user_map" className="sr-only">
             지역
           </label>
           <FontAwesomeIcon icon={faMap} className="signup-icon" />
@@ -33,7 +33,7 @@ const Signup = ({ toggleForm }) => {
           </label>
           <FontAwesomeIcon icon={faUser} className="signup-icon" />
           <input
-            id="name"
+            id="user_name"
             type="text"
             placeholder="이름을 입력하세요"
             className="signup-input"
@@ -43,12 +43,12 @@ const Signup = ({ toggleForm }) => {
 
         {/* 아이디 입력 */}
         <div className="signup-input-wrapper">
-          <label htmlFor="user_id" className="sr-only">
+          <label htmlFor="user_mail" className="sr-only">
             아이디
           </label>
           <FontAwesomeIcon icon={faUser} className="signup-icon" />
           <input
-            id="user_id"
+            id="user_mail"
             type="text"
             placeholder="아이디를 입력하세요"
             className="signup-input"
@@ -102,11 +102,7 @@ const Signup = ({ toggleForm }) => {
         </div>
 
         {/* 회원가입 버튼 */}
-        <button
-          type="submit"
-          className="signup-button"
-          onClick={toggleForm}
-        >
+        <button type="submit" className="signup-button" onClick={toggleForm}>
           회원가입
         </button>
       </form>

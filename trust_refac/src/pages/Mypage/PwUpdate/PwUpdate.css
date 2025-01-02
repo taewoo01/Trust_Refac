@@ -1,83 +1,84 @@
 /* 컨테이너 스타일 */
 .pw-update-container {
-    width: 100%;
-    max-width: 400px; /* max-w-md */
-    border: 1px solid #cfe2ff; /* border-blue-200 */
-    border-radius: 8px;
-    padding: 40px; /* p-10 */
-    background-color: #fff;
+  width: 100%;
+  max-width: 400px; /* max-w-md */
+  border: 1px solid #cfe2ff; /* border-blue-200 */
+  border-radius: 8px;
+  padding: 40px; /* p-10 */
+  background-color: #fff;
 }
 
 /* 제목 스타일 */
 .pw-update-title {
-    font-size: 1.5rem; /* text-xl */
-    font-weight: bold; /* font-bold */
-    margin-bottom: 30px; /* mb-8 */
-    text-align: center; /* text-center */
-    color: #333; /* text-gray-800 */
+  font-size: 1.5rem; /* text-xl */
+  font-weight: bold; /* font-bold */
+  margin-bottom: 30px; /* mb-8 */
+  text-align: center; /* text-center */
+  color: #333; /* text-gray-800 */
 }
 
 /* 입력 필드 컨테이너 */
 .pw-update-input-wrapper {
-    position: relative;
-    margin-bottom: 20px; /* mb-5 */
+  position: relative;
+  margin-bottom: 20px; /* mb-5 */
 }
 
 /* 아이콘 스타일 */
 .pw-update-icon {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #6b7280; /* text-gray-400 */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280; /* text-gray-400 */
 }
 
 /* 입력 필드 스타일 */
 .pw-update-input {
-    position: relative;
-    left: 2rem;
-    padding: 8px;
-    width: 90%;
-    border: 1px solid #cfe2ff;
-    border-radius: 4px;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
+  position: relative;
+  left: 2rem;
+  padding: 8px;
+  width: 90%;
+  border: 1px solid #cfe2ff;
+  border-radius: 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .pw-update-input:focus {
-    border-color: #3b82f6; /* focus:border-blue-300 */
-    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2); /* focus:ring-blue-300 */
+  border-color: #3b82f6; /* focus:border-blue-300 */
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2); /* focus:ring-blue-300 */
 }
 
 /* 확인 버튼 스타일 */
 .pw-update-button {
-    padding: 12px; /* py-3 */
-    background-color: #3b82f6; /* bg-blue-500 */
-    color: #fff; /* text-white */
-    border: none;
-    border-radius: 4px; /* rounded */
-    cursor: pointer;
-    font-weight: bold; /* font-bold */
-    transition: background-color 0.2s; /* transition */
+  width: 100%;
+  padding: 12px; /* py-3 */
+  background-color: #3b82f6; /* bg-blue-500 */
+  color: #fff; /* text-white */
+  border: none;
+  border-radius: 4px; /* rounded */
+  cursor: pointer;
+  font-weight: bold; /* font-bold */
+  transition: background-color 0.2s; /* transition */
 }
 
 .pw-update-button:hover {
-    background-color: #2563eb; /* hover:bg-blue-600 */
+  background-color: #2563eb; /* hover:bg-blue-600 */
 }
 
 /* 닫기 버튼 스타일 */
 .pw-update-close-button {
-    margin-top: 20px; /* mt-5 */
-    padding: 12px; /* py-3 */
-    width: 100%; /* w-full */
-    background-color: #f5f5f5; /* bg-gray-200 */
-    color: #555; /* text-gray-600 */
-    border: 1px solid #ddd; /* border-gray-300 */
-    border-radius: 4px; /* rounded */
-    cursor: pointer;
-    font-weight: bold; /* font-bold */
+  margin-top: 20px; /* mt-5 */
+  padding: 12px; /* py-3 */
+  width: 100%; /* w-full */
+  background-color: #f5f5f5; /* bg-gray-200 */
+  color: #555; /* text-gray-600 */
+  border: 1px solid #ddd; /* border-gray-300 */
+  border-radius: 4px; /* rounded */
+  cursor: pointer;
+  font-weight: bold; /* font-bold */
 }
 
 .pw-update-close-button:hover {
-    background-color: #e4e4e4; /* hover:bg-gray-300 */
+  background-color: #e4e4e4; /* hover:bg-gray-300 */
 }
