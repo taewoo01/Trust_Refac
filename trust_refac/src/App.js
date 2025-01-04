@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Nav from "./Layout/Nav/Nav";
 import Main from "./pages/Main/Main";
@@ -11,6 +11,8 @@ import Right from "./Layout/Right/Right";
 import Sign from "./pages/Sign/Sign/Sign.jsx";
 import Modal from "./components/Modal/Modal.jsx";
 import "./App.css";
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 const myInfo = {
   id: 1,
@@ -145,8 +147,38 @@ const ProductCardItem = [
   },
 ];
 
+/* firebase */
+// Import the functions you need from the SDKs you need
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyC1EdVf3gcx58g2HVFj1QvsVe50cmVGcCk",
+  authDomain: "trust-8c33d.firebaseapp.com",
+  projectId: "trust-8c33d",
+  storageBucket: "trust-8c33d.firebasestorage.app",
+  messagingSenderId: "607876469365",
+  appId: "1:607876469365:web:e4f356b663cf973c05de3c",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
 function App() {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+
+  const [productsList, setProductList] = useState([]);
+  useEffect(() => {
+    const getProduct = async () => {
+      let products = await getDocs(collection(db, "product"));
+      let productListData = products.docs.map((product) => product.data());
+      setProductList(productListData);
+      console.log(productsList);
+    };
+    getProduct();
+  }, []);
 
   const openLoginModal = () => setIsLoginModalOpen(true);
   const closeLoginModal = () => setIsLoginModalOpen(false);
@@ -177,7 +209,7 @@ function App() {
               path="/"
               element={
                 <Main
-                  ProductCardItem={ProductCardItem}
+                  products={productsList}
                   onProductClick={handleProductClick}
                 />
               }

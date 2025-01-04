@@ -1,13 +1,17 @@
 import ProductCard from "../../components/Card/Productcard/Productcard";
 import "./Main.css";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const Main = ({ ProductCardItem, onProductClick }) => {
+const Main = ({ products, onProductClick }) => {
   // 최다 조회수 기준으로 정렬하여 상위 3개를 가져옵니다.
-  const topViews = ProductCardItem.sort(
-    (a, b) => b.product_view - a.product_view
-  ) // 조회수 기준 내림차순 정렬
+  useEffect(() => {
+    const p = products;
+    console.log(p);
+    console.log(p[0].product_view);
+  }, []);
+  const topViews = products
+    .sort((a, b) => b.product_view - a.product_view) // 조회수 기준 내림차순 정렬
     .slice(0, 3); // 상위 3개 항목만 가져오기
 
   //페이지 관련
@@ -17,10 +21,10 @@ const Main = ({ ProductCardItem, onProductClick }) => {
   // 페이지에 맞는 상품을 가져옵니다.
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const currentItems = ProductCardItem.slice(startIndex, endIndex);
+  const currentItems = products.slice(startIndex, endIndex);
 
   // 총 페이지 수 계산
-  const totalPages = Math.ceil(ProductCardItem.length / itemsPerPage);
+  const totalPages = Math.ceil(products.length / itemsPerPage);
 
   // 페이지 변경 함수
   const goToPage = (page) => {
@@ -35,13 +39,13 @@ const Main = ({ ProductCardItem, onProductClick }) => {
         <div className="maxView">
           <div className="maxViewTitle">최다 조회수</div>
           <div className="productCardList">
-            {topViews.map((item) => (
+            {topViews.map((item, index) => (
               <Link
                 to={`/detailproduct/${item.id}`}
-                key={item.id}
+                key={`index-${index}`}
                 onClick={() => onProductClick(item)}
               >
-                <ProductCard item={item} />
+                <ProductCard item={item} key={`card-${index}`} />
               </Link>
             ))}
           </div>
@@ -49,16 +53,15 @@ const Main = ({ ProductCardItem, onProductClick }) => {
         <div className="lately">
           <div className="latelyTitle">최근 상품</div>
           <div className="productCardList">
-            {ProductCardItem.sort(
-              (a, b) => new Date(b.product_day) - new Date(a.product_day)
-            ) // 날짜 기준 내림차순 정렬
-              .map((item) => (
+            {products
+              .sort((a, b) => new Date(b.product_day) - new Date(a.product_day)) // 날짜 기준 내림차순 정렬
+              .map((item, index) => (
                 <Link
                   to={`/detailproduct/${item.id}`}
-                  key={item.id}
+                  key={`index-${index}`}
                   onClick={() => onProductClick(item)}
                 >
-                  <ProductCard item={item} />
+                  <ProductCard item={item} key={`card-${index}`} />
                 </Link>
               ))}
           </div>
