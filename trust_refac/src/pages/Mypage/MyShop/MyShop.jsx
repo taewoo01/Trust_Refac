@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./MyShop.css";
 import ProductCard from "../../../components/Card/Productcard/Productcard";
 
-const MyShop = ({ ProductCardItem }) => {
+const MyShop = ({ Products }) => {
   const [selectedMenu, setSelectedMenu] = useState("buy"); // 기본값: 구매내역
 
   // 메뉴 클릭 핸들러
@@ -11,7 +11,7 @@ const MyShop = ({ ProductCardItem }) => {
   };
 
   // 메뉴별 필터링된 데이터
-  const filteredItems = ProductCardItem.filter((item) => {
+  const filteredItems = Products.filter((item) => {
     if (selectedMenu === "buy") {
       return item.seller === "이영"; // 예: 구매내역 기준
     } else if (selectedMenu === "sell") {

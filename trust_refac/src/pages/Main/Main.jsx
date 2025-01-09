@@ -5,11 +5,6 @@ import { useEffect, useState } from "react";
 
 const Main = ({ products, onProductClick }) => {
   // 최다 조회수 기준으로 정렬하여 상위 3개를 가져옵니다.
-  useEffect(() => {
-    const p = products;
-    console.log(p);
-    console.log(p[0].product_view);
-  }, []);
   const topViews = products
     .sort((a, b) => b.product_view - a.product_view) // 조회수 기준 내림차순 정렬
     .slice(0, 3); // 상위 3개 항목만 가져오기
