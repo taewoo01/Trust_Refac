@@ -3,12 +3,13 @@ import "./DetailProduct.css";
 import DetailProductCard from "../../components/Card/DetailProductCard/DetailProductCard";
 import Comnet from "../../components/Common/Coment/Coment";
 
-const DetailProduct = ({ Products }) => {
+const DetailProduct = ({ products }) => {
   const { id } = useParams(); // URL에서 id 값을 가져옵니다.
+  console.log("Products:", products);
+  console.log("Matched Product:", products);
 
   // 해당 id에 맞는 상품 찾기
-  const product = Products.find((item) => item.id === parseInt(id)); // id는 숫자로 비교
-
+  const product = products.find((item) => item.id === id);
   return (
     <>
       <div className="detailProductPage">

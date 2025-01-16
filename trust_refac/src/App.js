@@ -1,6 +1,8 @@
+// App.js
 import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { fetchProducts } from "./firebase/db"; // Firestore 유틸리티
+import { fetchUsers } from "./firebase/db"; // 사용자 정보 가져오기
 import Nav from "./Layout/Nav/Nav";
 import Main from "./pages/Main/Main";
 import Product from "./pages/Product/Product";
@@ -16,6 +18,7 @@ import Sign from "./pages/Sign/Sign/Sign";
 function App() {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [productsList, setProductList] = useState([]);
+  const [usersList, setUsersList] = useState([]); // 사용자 정보 상태 추가
 
   // Firebase 데이터 가져오기
   useEffect(() => {
@@ -24,6 +27,12 @@ function App() {
       setProductList(products);
     };
     loadProducts();
+
+    const loadUsers = async () => {
+      const users = await fetchUsers();
+      setUsersList(users); // 사용자 데이터 설정
+    };
+    loadUsers();
   }, []);
 
   const openLoginModal = () => setIsLoginModalOpen(true);
@@ -67,7 +76,7 @@ function App() {
           </Routes>
           {isLoginModalOpen && (
             <Modal isOpen={isLoginModalOpen} onClose={closeLoginModal}>
-              <Sign />
+              <Sign users={usersList} />
             </Modal>
           )}
         </div>

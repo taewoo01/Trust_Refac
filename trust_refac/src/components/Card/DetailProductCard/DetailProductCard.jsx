@@ -2,13 +2,15 @@ import "./DetailProductCard.css";
 import { Form, Button } from "antd";
 
 const DetailProductCard = ({ item }) => {
-  const imgsrc = require(`../../../assets/images/${item.imgsrc}`);
-
   return (
     <>
       <div className="detailproductcard">
         <div className="productImg">
-          <img className="product-img" src={imgsrc} alt={item.product_title} />
+          <img
+            className="product-img"
+            src={item.imgsrc}
+            alt={item.product_title}
+          />
         </div>
         <div className="productContent">
           <div className="productCategory">
