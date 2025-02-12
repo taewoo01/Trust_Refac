@@ -1,11 +1,11 @@
-// Sign.js
 import React, { useState, useCallback, useEffect } from "react";
 import { fetchUsers } from "../../../firebase/db";
 import Signin from "../Signin/Signin";
 import Signup from "../SignUp/Signup";
 import "./Sign.css";
 
-const Sign = () => {
+const Sign = ({ onClose, onLoginSuccess }) => {
+  // ✅ onLoginSuccess 추가
   const [isLoginForm, setIsLoginForm] = useState(true);
   const [usersList, setUsersList] = useState([]); // 사용자 정보 상태 추가
 
@@ -27,7 +27,12 @@ const Sign = () => {
     <div className="sign-container">
       <h1 className="sign-title">TRUST</h1>
       {isLoginForm ? (
-        <Signin toggleForm={toggleForm} users={usersList} /> // Signin에 users 전달
+        <Signin
+          toggleForm={toggleForm}
+          users={usersList}
+          onClose={onClose}
+          onLoginSuccess={onLoginSuccess} // ✅ 추가
+        />
       ) : (
         <Signup toggleForm={toggleForm} />
       )}

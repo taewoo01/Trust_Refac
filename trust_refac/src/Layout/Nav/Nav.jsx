@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import logopng from "../../assets/images/logo.png";
 const { Search } = Input;
 
-const Nav = ({ openLoginModal }) => {
+const Nav = ({ openLoginModal, user, logout }) => {
   const [dropdownStates, setDropdownStates] = useState({
     myInfo: false,
     fashion: false, // 변경된 키
@@ -60,9 +60,15 @@ const Nav = ({ openLoginModal }) => {
     <>
       <div className="navigation">
         <div className="sign-menu">
-          <button className="signin" onClick={openLoginModal}>
-            로그인
-          </button>
+          {user ? (
+            <button className="signin" onClick={logout}>
+              로그아웃
+            </button>
+          ) : (
+            <button className="signin" onClick={openLoginModal}>
+              로그인
+            </button>
+          )}
           <div className="my_info_wrapper">
             <div
               className="my_info_page"
@@ -79,7 +85,9 @@ const Nav = ({ openLoginModal }) => {
                 </Link>
                 <PwUpdateModal onClick={closeAllDropdowns} />
                 <Link to="mypage">
-                  <div className="dropdown-item">내 상점</div>
+                  <div className="dropdown-item" onClick={closeAllDropdowns}>
+                    내 상점
+                  </div>
                 </Link>
               </div>
             )}

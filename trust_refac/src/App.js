@@ -1,8 +1,8 @@
-// App.js
 import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
-import { fetchProducts } from "./firebase/db"; // Firestore 유틸리티
-import { fetchUsers } from "./firebase/db"; // 사용자 정보 가져오기
+import { fetchProducts, fetchUsers } from "./firebase/db"; // Firestore 유틸리티
+import { auth } from "./firebase/config";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import Nav from "./Layout/Nav/Nav";
 import Main from "./pages/Main/Main";
 import Product from "./pages/Product/Product";
@@ -16,9 +16,21 @@ import "./App.css";
 import Sign from "./pages/Sign/Sign/Sign";
 
 function App() {
+  const [user, setUser] = useState(null); // 로그인된 사용자 정보 관리
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [productsList, setProductList] = useState([]);
-  const [usersList, setUsersList] = useState([]); // 사용자 정보 상태 추가
+  const [usersList, setUsersList] = useState([]);
+  const [viewedItems, setViewedItems] = useState([]);
+  const [loading, setLoading] = useState(true); // 로딩 상태 추가
+
+  // Firebase 인증 상태 감지
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser); // 로그인된 사용자 정보 저장
+      setLoading(false); // 로딩 완료
+    });
+    return () => unsubscribe(); // 언마운트 시 구독 해제
+  }, []);
 
   // Firebase 데이터 가져오기
   useEffect(() => {
@@ -30,7 +42,7 @@ function App() {
 
     const loadUsers = async () => {
       const users = await fetchUsers();
-      setUsersList(users); // 사용자 데이터 설정
+      setUsersList(users);
     };
     loadUsers();
   }, []);
@@ -38,7 +50,21 @@ function App() {
   const openLoginModal = () => setIsLoginModalOpen(true);
   const closeLoginModal = () => setIsLoginModalOpen(false);
 
-  const [viewedItems, setViewedItems] = useState([]);
+  // Firebase 로그아웃
+  const logout = async () => {
+    try {
+      await signOut(auth); // Firebase 로그아웃
+      setUser(null);
+      console.log("로그아웃 성공");
+    } catch (error) {
+      console.error("로그아웃 실패:", error);
+    }
+  };
+
+  const handleLoginSuccess = (user) => {
+    console.log("로그인 성공:", user);
+    setUser(user);
+  };
 
   const handleProductClick = (item) => {
     setViewedItems((prevItems) => {
@@ -47,9 +73,13 @@ function App() {
     });
   };
 
+  if (loading) {
+    return <div>로딩 중...</div>; // 인증 상태 확인 중일 때 로딩 화면 표시
+  }
+
   return (
     <BrowserRouter>
-      <Nav openLoginModal={openLoginModal} />
+      <Nav openLoginModal={openLoginModal} user={user} logout={logout} />
       <div className="app-layout">
         <div className="main-content">
           <Routes>
@@ -68,7 +98,8 @@ function App() {
               path="/mypage"
               element={<MyShop products={productsList} />}
             />
-            <Route path="/pwupdate" element={<PwUpdate />} />
+            <Route path="/pwupdate" element={<PwUpdate user={user} />} />
+            {/* user 전달 */}
             <Route
               path="/detailproduct/:id"
               element={<DetailProduct products={productsList} />}
@@ -76,7 +107,11 @@ function App() {
           </Routes>
           {isLoginModalOpen && (
             <Modal isOpen={isLoginModalOpen} onClose={closeLoginModal}>
-              <Sign users={usersList} />
+              <Sign
+                users={usersList}
+                onClose={closeLoginModal}
+                onLoginSuccess={handleLoginSuccess}
+              />
             </Modal>
           )}
         </div>
