@@ -21,7 +21,7 @@ const DetailProduct = ({ products }) => {
           )}
         </div>
         <div className="comentpage">
-          <Comnet />
+          <Comnet productID={product?.id} />
         </div>
       </div>
     </>
